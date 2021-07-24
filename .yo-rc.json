@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.bluepearlbiotech.patient"
+    },
+    "jhipsterVersion": "6.10.4",
+    "applicationType": "monolith",
+    "baseName": "patient",
+    "packageName": "com.bluepearlbiotech.patient",
+    "packageFolder": "com/bluepearlbiotech/patient",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjZiZTdlZDFlMzhkN2RkZGU1M2UzZTdjNDAzMmNmYTFhOTYxYjRjMTA3YjdhYzdlYzM0ZGY3NzM3YWU3NzQ1ZDRjNmM1YTMwY2I5MzhjMTE0MTQ4YWIwM2Y4YTBlZTc2YjFlOWVhYzc5NTY2YzI0M2MzNjZlZDNkODNiZTkxYjk=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "none",
+    "clientThemeVariant": "",
+    "creationTimestamp": 1627118795303,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
