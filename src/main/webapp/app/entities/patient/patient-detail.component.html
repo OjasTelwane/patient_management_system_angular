@@ -1,0 +1,284 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="patient">
+            <h2><span>Patient</span> {{ patient.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Form Number</span></dt>
+                <dd>
+                    <span>{{ patient.formNumber }}</span>
+                </dd>
+                <dt><span>Center Id</span></dt>
+                <dd>
+                    <span>{{ patient.centerId }}</span>
+                </dd>
+                <dt><span>Center Name</span></dt>
+                <dd>
+                    <span>{{ patient.centerName }}</span>
+                </dd>
+                <dt><span>First Name</span></dt>
+                <dd>
+                    <span>{{ patient.firstName }}</span>
+                </dd>
+                <dt><span>Middle Name</span></dt>
+                <dd>
+                    <span>{{ patient.middleName }}</span>
+                </dd>
+                <dt><span>Last Name</span></dt>
+                <dd>
+                    <span>{{ patient.lastName }}</span>
+                </dd>
+                <dt><span>Display Name</span></dt>
+                <dd>
+                    <span>{{ patient.displayName }}</span>
+                </dd>
+                <dt><span>Date Of Birth</span></dt>
+                <dd>
+                    <span>{{ patient.dateOfBirth }}</span>
+                </dd>
+                <dt><span>Gender</span></dt>
+                <dd>
+                    <span>{{ patient.gender }}</span>
+                </dd>
+                <dt><span>Age</span></dt>
+                <dd>
+                    <span>{{ patient.age }}</span>
+                </dd>
+                <dt><span>Address</span></dt>
+                <dd>
+                    <span>{{ patient.address }}</span>
+                </dd>
+                <dt><span>Area</span></dt>
+                <dd>
+                    <span>{{ patient.area }}</span>
+                </dd>
+                <dt><span>City</span></dt>
+                <dd>
+                    <span>{{ patient.city }}</span>
+                </dd>
+                <dt><span>District</span></dt>
+                <dd>
+                    <span>{{ patient.district }}</span>
+                </dd>
+                <dt><span>Con State</span></dt>
+                <dd>
+                    <span>{{ patient.conState }}</span>
+                </dd>
+                <dt><span>State Code</span></dt>
+                <dd>
+                    <span>{{ patient.stateCode }}</span>
+                </dd>
+                <dt><span>Region</span></dt>
+                <dd>
+                    <span>{{ patient.region }}</span>
+                </dd>
+                <dt><span>Country</span></dt>
+                <dd>
+                    <span>{{ patient.country }}</span>
+                </dd>
+                <dt><span>Country Code</span></dt>
+                <dd>
+                    <span>{{ patient.countryCode }}</span>
+                </dd>
+                <dt><span>Pincode</span></dt>
+                <dd>
+                    <span>{{ patient.pincode }}</span>
+                </dd>
+                <dt><span>Photo 1</span></dt>
+                <dd>
+                    <div *ngIf="patient.photo1">
+                        <a (click)="openFile(patient.photo1ContentType, patient.photo1)">
+                            <img [src]="'data:' + patient.photo1ContentType + ';base64,' + patient.photo1" style="max-width: 100%;" alt="patient image"/>
+                        </a>
+                        {{ patient.photo1ContentType }}, {{ byteSize(patient.photo1) }}
+                    </div>
+                </dd>
+                <dt><span>Photo 2</span></dt>
+                <dd>
+                    <div *ngIf="patient.photo2">
+                        <a (click)="openFile(patient.photo2ContentType, patient.photo2)">
+                            <img [src]="'data:' + patient.photo2ContentType + ';base64,' + patient.photo2" style="max-width: 100%;" alt="patient image"/>
+                        </a>
+                        {{ patient.photo2ContentType }}, {{ byteSize(patient.photo2) }}
+                    </div>
+                </dd>
+                <dt><span>Mobile Number</span></dt>
+                <dd>
+                    <span>{{ patient.mobileNumber }}</span>
+                </dd>
+                <dt><span>Contact No</span></dt>
+                <dd>
+                    <span>{{ patient.contactNo }}</span>
+                </dd>
+                <dt><span>Education</span></dt>
+                <dd>
+                    <span>{{ patient.education }}</span>
+                </dd>
+                <dt><span>Blood Group</span></dt>
+                <dd>
+                    <span>{{ patient.bloodGroup }}</span>
+                </dd>
+                <dt><span>Email</span></dt>
+                <dd>
+                    <span>{{ patient.email }}</span>
+                </dd>
+                <dt><span>Reg Date</span></dt>
+                <dd>
+                    <span>{{ patient.regDate }}</span>
+                </dd>
+                <dt><span>Profession</span></dt>
+                <dd>
+                    <span>{{ patient.profession }}</span>
+                </dd>
+                <dt><span>Marriage Status</span></dt>
+                <dd>
+                    <span>{{ patient.marriageStatus }}</span>
+                </dd>
+                <dt><span>Expired</span></dt>
+                <dd>
+                    <span>{{ patient.expired }}</span>
+                </dd>
+                <dt><span>Language Name</span></dt>
+                <dd>
+                    <span>{{ patient.languageName }}</span>
+                </dd>
+                <dt><span>Veg Non Veg</span></dt>
+                <dd>
+                    <span>{{ patient.vegNonVeg }}</span>
+                </dd>
+                <dt><span>Refered By</span></dt>
+                <dd>
+                    <span>{{ patient.referedBy }}</span>
+                </dd>
+                <dt><span>Referd By Name</span></dt>
+                <dd>
+                    <span>{{ patient.referdByName }}</span>
+                </dd>
+                <dt><span>Exercise Regularly</span></dt>
+                <dd>
+                    <span>{{ patient.exerciseRegularly }}</span>
+                </dd>
+                <dt><span>Addiction</span></dt>
+                <dd>
+                    <span>{{ patient.addiction }}</span>
+                </dd>
+                <dt><span>Hours Sleep</span></dt>
+                <dd>
+                    <span>{{ patient.hoursSleep }}</span>
+                </dd>
+                <dt><span>Wake Rested</span></dt>
+                <dd>
+                    <span>{{ patient.wakeRested }}</span>
+                </dd>
+                <dt><span>Water Intake</span></dt>
+                <dd>
+                    <span>{{ patient.waterIntake }}</span>
+                </dd>
+                <dt><span>Hours Work</span></dt>
+                <dd>
+                    <span>{{ patient.hoursWork }}</span>
+                </dd>
+                <dt><span>Shift Work</span></dt>
+                <dd>
+                    <span>{{ patient.shiftWork }}</span>
+                </dd>
+                <dt><span>Level Of Stress</span></dt>
+                <dd>
+                    <span>{{ patient.levelOfStress }}</span>
+                </dd>
+                <dt><span>Patient Condition</span></dt>
+                <dd>
+                    <span>{{ patient.patientCondition }}</span>
+                </dd>
+                <dt><span>Current Medication</span></dt>
+                <dd>
+                    <span>{{ patient.currentMedication }}</span>
+                </dd>
+                <dt><span>Chronological History</span></dt>
+                <dd>
+                    <span>{{ patient.chronologicalHistory }}</span>
+                </dd>
+                <dt><span>Symptomatic Changes</span></dt>
+                <dd>
+                    <span>{{ patient.symptomaticChanges }}</span>
+                </dd>
+                <dt><span>Level Of Discomfort</span></dt>
+                <dd>
+                    <span>{{ patient.levelOfDiscomfort }}</span>
+                </dd>
+                <dt><span>Fees Discount</span></dt>
+                <dd>
+                    <span>{{ patient.feesDiscount }}</span>
+                </dd>
+                <dt><span>Fees Discount Given By</span></dt>
+                <dd>
+                    <span>{{ patient.feesDiscountGivenBy }}</span>
+                </dd>
+                <dt><span>Discount Type</span></dt>
+                <dd>
+                    <span>{{ patient.discountType }}</span>
+                </dd>
+                <dt><span>Discount</span></dt>
+                <dd>
+                    <span>{{ patient.discount }}</span>
+                </dd>
+                <dt><span>Allow Email</span></dt>
+                <dd>
+                    <span>{{ patient.allowEmail }}</span>
+                </dd>
+                <dt><span>Allow SMS</span></dt>
+                <dd>
+                    <span>{{ patient.allowSMS }}</span>
+                </dd>
+                <dt><span>Allow Whats App</span></dt>
+                <dd>
+                    <span>{{ patient.allowWhatsApp }}</span>
+                </dd>
+                <dt><span>Allow Promotions</span></dt>
+                <dd>
+                    <span>{{ patient.allowPromotions }}</span>
+                </dd>
+                <dt><span>I Agree</span></dt>
+                <dd>
+                    <span>{{ patient.iAgree }}</span>
+                </dd>
+                <dt><span>Healing Level</span></dt>
+                <dd>
+                    <span>{{ patient.healingLevel }}</span>
+                </dd>
+                <dt><span>Allow Login</span></dt>
+                <dd>
+                    <span>{{ patient.allowLogin }}</span>
+                </dd>
+                <dt><span>Password</span></dt>
+                <dd>
+                    <span>{{ patient.password }}</span>
+                </dd>
+                <dt><span>Voided</span></dt>
+                <dd>
+                    <span>{{ patient.voided }}</span>
+                </dd>
+                <dt><span>User Id</span></dt>
+                <dd>
+                    <span>{{ patient.userId }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/patient', patient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

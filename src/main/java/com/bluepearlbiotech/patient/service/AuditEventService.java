@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.UUID;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
@@ -70,7 +71,7 @@ public class AuditEventService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<AuditEvent> find(Long id) {
+    public Optional<AuditEvent> find(UUID id) {
         return persistenceAuditEventRepository.findById(id)
             .map(auditEventConverter::convertToAuditEvent);
     }

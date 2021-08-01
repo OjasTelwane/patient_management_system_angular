@@ -1,0 +1,203 @@
+<div>
+    <h2 id="page-heading">
+        <span>Patients</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-patient" [routerLink]="['/patient/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span>
+            Create a new Patient
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="patients?.length === 0">
+        <span>No patients found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="patients && patients.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span>ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="formNumber"><span>Form Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="centerId"><span>Center Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="centerName"><span>Center Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="firstName"><span>First Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="middleName"><span>Middle Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lastName"><span>Last Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="displayName"><span>Display Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateOfBirth"><span>Date Of Birth</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="gender"><span>Gender</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="age"><span>Age</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="address"><span>Address</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="area"><span>Area</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="city"><span>City</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="district"><span>District</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="conState"><span>Con State</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stateCode"><span>State Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="region"><span>Region</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="country"><span>Country</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="countryCode"><span>Country Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="pincode"><span>Pincode</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="photo1"><span>Photo 1</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="photo2"><span>Photo 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mobileNumber"><span>Mobile Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="contactNo"><span>Contact No</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="education"><span>Education</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="bloodGroup"><span>Blood Group</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span>Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="regDate"><span>Reg Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="profession"><span>Profession</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="marriageStatus"><span>Marriage Status</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="expired"><span>Expired</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="languageName"><span>Language Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="vegNonVeg"><span>Veg Non Veg</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="referedBy"><span>Refered By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="referdByName"><span>Referd By Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="exerciseRegularly"><span>Exercise Regularly</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="addiction"><span>Addiction</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="hoursSleep"><span>Hours Sleep</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="wakeRested"><span>Wake Rested</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="waterIntake"><span>Water Intake</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="hoursWork"><span>Hours Work</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="shiftWork"><span>Shift Work</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="levelOfStress"><span>Level Of Stress</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="patientCondition"><span>Patient Condition</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="currentMedication"><span>Current Medication</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="chronologicalHistory"><span>Chronological History</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="symptomaticChanges"><span>Symptomatic Changes</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="levelOfDiscomfort"><span>Level Of Discomfort</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="feesDiscount"><span>Fees Discount</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="feesDiscountGivenBy"><span>Fees Discount Given By</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="discountType"><span>Discount Type</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="discount"><span>Discount</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allowEmail"><span>Allow Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allowSMS"><span>Allow SMS</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allowWhatsApp"><span>Allow Whats App</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allowPromotions"><span>Allow Promotions</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="iAgree"><span>I Agree</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="healingLevel"><span>Healing Level</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="allowLogin"><span>Allow Login</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="password"><span>Password</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="voided"><span>Voided</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="userId"><span>User Id</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let patient of patients ;trackBy: trackId">
+                    <td><a [routerLink]="['/patient', patient.id, 'view']">{{ patient.id }}</a></td>
+                    <td>{{ patient.formNumber }}</td>
+                    <td>{{ patient.centerId }}</td>
+                    <td>{{ patient.centerName }}</td>
+                    <td>{{ patient.firstName }}</td>
+                    <td>{{ patient.middleName }}</td>
+                    <td>{{ patient.lastName }}</td>
+                    <td>{{ patient.displayName }}</td>
+                    <td>{{ patient.dateOfBirth | date:'medium' }}</td>
+                    <td>{{ patient.gender }}</td>
+                    <td>{{ patient.age }}</td>
+                    <td>{{ patient.address }}</td>
+                    <td>{{ patient.area }}</td>
+                    <td>{{ patient.city }}</td>
+                    <td>{{ patient.district }}</td>
+                    <td>{{ patient.conState }}</td>
+                    <td>{{ patient.stateCode }}</td>
+                    <td>{{ patient.region }}</td>
+                    <td>{{ patient.country }}</td>
+                    <td>{{ patient.countryCode }}</td>
+                    <td>{{ patient.pincode }}</td>
+                    <td>
+                        <a *ngIf="patient.photo1" (click)="openFile(patient.photo1ContentType, patient.photo1)">
+                            <img [src]="'data:' + patient.photo1ContentType + ';base64,' + patient.photo1" style="max-height: 30px;" alt="patient image"/>
+                        </a>
+                        <span *ngIf="patient.photo1">{{ patient.photo1ContentType }}, {{ byteSize(patient.photo1) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="patient.photo2" (click)="openFile(patient.photo2ContentType, patient.photo2)">
+                            <img [src]="'data:' + patient.photo2ContentType + ';base64,' + patient.photo2" style="max-height: 30px;" alt="patient image"/>
+                        </a>
+                        <span *ngIf="patient.photo2">{{ patient.photo2ContentType }}, {{ byteSize(patient.photo2) }}</span>
+                    </td>
+                    <td>{{ patient.mobileNumber }}</td>
+                    <td>{{ patient.contactNo }}</td>
+                    <td>{{ patient.education }}</td>
+                    <td>{{ patient.bloodGroup }}</td>
+                    <td>{{ patient.email }}</td>
+                    <td>{{ patient.regDate | date:'medium' }}</td>
+                    <td>{{ patient.profession }}</td>
+                    <td>{{ patient.marriageStatus }}</td>
+                    <td>{{ patient.expired }}</td>
+                    <td>{{ patient.languageName }}</td>
+                    <td>{{ patient.vegNonVeg }}</td>
+                    <td>{{ patient.referedBy }}</td>
+                    <td>{{ patient.referdByName }}</td>
+                    <td>{{ patient.exerciseRegularly }}</td>
+                    <td>{{ patient.addiction }}</td>
+                    <td>{{ patient.hoursSleep }}</td>
+                    <td>{{ patient.wakeRested }}</td>
+                    <td>{{ patient.waterIntake }}</td>
+                    <td>{{ patient.hoursWork }}</td>
+                    <td>{{ patient.shiftWork }}</td>
+                    <td>{{ patient.levelOfStress }}</td>
+                    <td>{{ patient.patientCondition }}</td>
+                    <td>{{ patient.currentMedication }}</td>
+                    <td>{{ patient.chronologicalHistory }}</td>
+                    <td>{{ patient.symptomaticChanges }}</td>
+                    <td>{{ patient.levelOfDiscomfort }}</td>
+                    <td>{{ patient.feesDiscount }}</td>
+                    <td>{{ patient.feesDiscountGivenBy }}</td>
+                    <td>{{ patient.discountType }}</td>
+                    <td>{{ patient.discount }}</td>
+                    <td>{{ patient.allowEmail }}</td>
+                    <td>{{ patient.allowSMS }}</td>
+                    <td>{{ patient.allowWhatsApp }}</td>
+                    <td>{{ patient.allowPromotions }}</td>
+                    <td>{{ patient.iAgree }}</td>
+                    <td>{{ patient.healingLevel }}</td>
+                    <td>{{ patient.allowLogin }}</td>
+                    <td>{{ patient.password }}</td>
+                    <td>{{ patient.voided }}</td>
+                    <td>{{ patient.userId }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/patient', patient.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/patient', patient.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(patient)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="patients && patients.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

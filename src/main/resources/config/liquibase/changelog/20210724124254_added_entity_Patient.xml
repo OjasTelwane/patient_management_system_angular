@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                                http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+            Added the entity Patient.
+        -->
+    <changeSet id="20210724124254-1" author="jhipster">
+        <createTable tableName="icpatient">
+            <column name="id" type="${uuidType}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="form_number" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="center_id" type="${uuidType}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="center_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middle_name" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="last_name" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="display_name" type="varchar(64)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="date_of_birth" type="datetime">
+                <constraints nullable="true"/>
+            </column>
+            <column name="gender" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="age" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="address" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="area" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="city" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="district" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="con_state" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="state_code" type="varchar(14)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="region" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="country" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="country_code" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="pincode" type="varchar(14)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="photo_1" type="longblob">
+                <constraints nullable="true"/>
+            </column>
+            <column name="photo_1_content_type" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="photo_2" type="longblob">
+                <constraints nullable="true"/>
+            </column>
+            <column name="photo_2_content_type" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="mobile_number" type="varchar(15)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contact_no" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="education" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="blood_group" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="reg_date" type="datetime">
+                <constraints nullable="true"/>
+            </column>
+            <column name="profession" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="marriage_status" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="expired" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="language_name" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="veg_non_veg" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="refered_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="referd_by_name" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="exercise_regularly" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="addiction" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="hours_sleep" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="wake_rested" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="water_intake" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="hours_work" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="shift_work" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="level_of_stress" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="patient_condition" type="varchar(4096)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="current_medication" type="varchar(4096)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="chronological_history" type="varchar(4096)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="symptomatic_changes" type="varchar(4096)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="level_of_discomfort" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="fees_discount" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="fees_discount_given_by" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="discount_type" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="discount" type="decimal(21,2)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="allow_email" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="allow_sms" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="allow_whats_app" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="allow_promotions" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="i_agree" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="healing_level" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="allow_login" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="voided" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="user_id" type="${uuidType}">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="icpatient" columnName="date_of_birth" columnDataType="datetime"/>
+        <dropDefaultValue tableName="icpatient" columnName="reg_date" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20210724124254-1-relations" author="jhipster"></changeSet>
+
+    <!-- Added the entity audit columns -->
+    <changeSet id="20210724124254-audit-1" author="jhipster-entity-audit">
+        <addColumn tableName="icpatient">
+            <column name="created_by" type="varchar(50)" defaultValue="system">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="timestamp" defaultValueDate="${now}">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_modified_by" type="varchar(50)"/>
+            <column name="last_modified_date" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+            Load sample data generated with Faker.js
+            - This data can be easily edited using a CSV editor (or even MS Excel) and
+              is located in the 'src/main/resources/config/liquibase/fake-data' directory
+            - By default this data is applied when running with the JHipster 'dev' profile.
+              This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+              Spring Boot configuration key.
+        -->
+    <changeSet id="20210724124254-1-data" author="jhipster" context="faker">
+        <loadData file="config/liquibase/fake-data/icpatient.csv" separator=";" tableName="icpatient">
+            <column name="id" type="${uuidType}"/>
+            <column name="form_number" type="string"/>
+            <column name="center_id" type="${uuidType}"/>
+            <column name="center_name" type="string"/>
+            <column name="first_name" type="string"/>
+            <column name="middle_name" type="string"/>
+            <column name="last_name" type="string"/>
+            <column name="display_name" type="string"/>
+            <column name="date_of_birth" type="datetime"/>
+            <column name="gender" type="string"/>
+            <column name="age" type="numeric"/>
+            <column name="address" type="string"/>
+            <column name="area" type="string"/>
+            <column name="city" type="string"/>
+            <column name="district" type="string"/>
+            <column name="con_state" type="string"/>
+            <column name="state_code" type="string"/>
+            <column name="region" type="string"/>
+            <column name="country" type="string"/>
+            <column name="country_code" type="string"/>
+            <column name="pincode" type="string"/>
+            <column name="photo_1" type="blob"/>
+            <column name="photo_1_content_type" type="string"/>
+            <column name="photo_2" type="blob"/>
+            <column name="photo_2_content_type" type="string"/>
+            <column name="mobile_number" type="string"/>
+            <column name="contact_no" type="string"/>
+            <column name="education" type="string"/>
+            <column name="blood_group" type="string"/>
+            <column name="email" type="string"/>
+            <column name="reg_date" type="datetime"/>
+            <column name="profession" type="string"/>
+            <column name="marriage_status" type="string"/>
+            <column name="expired" type="boolean"/>
+            <column name="language_name" type="string"/>
+            <column name="veg_non_veg" type="boolean"/>
+            <column name="refered_by" type="string"/>
+            <column name="referd_by_name" type="string"/>
+            <column name="exercise_regularly" type="boolean"/>
+            <column name="addiction" type="boolean"/>
+            <column name="hours_sleep" type="numeric"/>
+            <column name="wake_rested" type="boolean"/>
+            <column name="water_intake" type="numeric"/>
+            <column name="hours_work" type="numeric"/>
+            <column name="shift_work" type="boolean"/>
+            <column name="level_of_stress" type="string"/>
+            <column name="patient_condition" type="string"/>
+            <column name="current_medication" type="string"/>
+            <column name="chronological_history" type="string"/>
+            <column name="symptomatic_changes" type="string"/>
+            <column name="level_of_discomfort" type="numeric"/>
+            <column name="fees_discount" type="boolean"/>
+            <column name="fees_discount_given_by" type="string"/>
+            <column name="discount_type" type="string"/>
+            <column name="discount" type="numeric"/>
+            <column name="allow_email" type="boolean"/>
+            <column name="allow_sms" type="boolean"/>
+            <column name="allow_whats_app" type="boolean"/>
+            <column name="allow_promotions" type="boolean"/>
+            <column name="i_agree" type="boolean"/>
+            <column name="healing_level" type="string"/>
+            <column name="allow_login" type="boolean"/>
+            <column name="password" type="string"/>
+            <column name="voided" type="boolean"/>
+            <column
+            name="user_id" type="${uuidType}"/>
+        <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,112 @@
+enum Gender {
+    Male, Female, Other
+} 
+
+enum HealingLevel {
+    Simple, Complex, Special
+}
+
+enum DiscountType {
+    NoDiscount, OnlyVisitFees, FixedFeesPerMonth, PercentDiscount, MaximumFees
+}
+
+entity Patient (icpatient) {
+  formNumber String required,
+  centerId UUID required,
+  centerName String required, 
+  firstName String maxlength(20) required,
+  middleName String maxlength(20),
+  lastName String maxlength(20) required,
+  displayName String maxlength(64),
+  dateOfBirth Instant,
+  gender Gender,
+  age Integer,
+  address String maxlength(255),
+  Area String,
+  city String,
+  district String,
+  conState String,
+  stateCode String maxlength(14),
+  region String,
+  country String,
+  countryCode String,
+  pincode String maxlength(14),
+  photo1 ImageBlob,
+  photo2 ImageBlob,
+  mobileNumber String maxlength(15) required,
+  contactNo String maxlength(20),
+  education String maxlength(50),
+  bloodGroup String maxlength(50),
+  Email String,
+  regDate Instant,
+  profession String maxlength(50),
+  marriageStatus String maxlength(20),
+  expired Boolean,
+  languageName String maxlength(20),
+  vegNonVeg Boolean,
+  referedBy String maxlength(255),
+  referdByName String maxlength(255),
+  exerciseRegularly Boolean,
+  addiction Boolean,
+  hoursSleep Integer,
+  wakeRested Boolean,
+  waterIntake Integer,
+  hoursWork Integer,
+  shiftWork Boolean,
+  levelOfStress String maxlength(20),
+  patientCondition String maxlength(4096),
+  currentMedication String maxlength(4096),
+  chronologicalHistory String maxlength(4096),
+  symptomaticChanges String maxlength(4096),
+  levelOfDiscomfort Integer,
+  feesDiscount Boolean,
+  feesDiscountGivenBy String
+  discountType DiscountType,
+  discount BigDecimal,
+  allowEmail Boolean,
+  allowSMS Boolean,
+  allowWhatsApp Boolean,
+  allowPromotions Boolean,
+  iAgree Boolean,
+  healingLevel HealingLevel,
+  allowLogin Boolean,
+  password String,
+  voided Boolean,
+  userId UUID
+ 
+}
+
+/**
+  * Location Information.
+  * @company Blue Pearl Biotech Software.
+  * @author Santosh Telwane.
+  * @Copyright 2020 Blue Pearl Biotech Software.
+  */
+entity Location (iclocation) {
+  country String,
+  countryCode String,
+  region String,
+  conState String,
+  stateCode String maxlength(14),
+  district String,
+  city String,
+  Area String,
+  pincode String maxlength(14)
+}
+
+/**
+  * Lookup Information.
+  * @company Blue Pearl Biotech Software.
+  * @author Santosh Telwane.
+  * @Copyright 2020 Blue Pearl Biotech Software.
+  */
+entity Lookup (iclookup) {
+lookup String required,
+  lookupType String required,
+  lookupOrder Integer,
+  lookupNotes String maxlength(4096),
+  voided Boolean, }
+
+paginate Patient, Lookup, Location with pagination
+service all with serviceClass
+filter * 

@@ -1,0 +1,367 @@
+{
+    "name": "Patient",
+    "fields": [
+        {
+            "fieldName": "formNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "centerId",
+            "fieldType": "UUID",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "centerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "middleName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "displayName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "64"
+        },
+        {
+            "fieldName": "dateOfBirth",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "Male,Female,Other"
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conState",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stateCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "14"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pincode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "14"
+        },
+        {
+            "fieldName": "photo1",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "photo2",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        },
+        {
+            "fieldName": "mobileNumber",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": "15"
+        },
+        {
+            "fieldName": "contactNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "education",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "bloodGroup",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "regDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "profession",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "marriageStatus",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "expired",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "languageName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "vegNonVeg",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "referedBy",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "referdByName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        },
+        {
+            "fieldName": "exerciseRegularly",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "addiction",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "hoursSleep",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "wakeRested",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "waterIntake",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hoursWork",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "shiftWork",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "levelOfStress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "20"
+        },
+        {
+            "fieldName": "patientCondition",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "4096"
+        },
+        {
+            "fieldName": "currentMedication",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "4096"
+        },
+        {
+            "fieldName": "chronologicalHistory",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "4096"
+        },
+        {
+            "fieldName": "symptomaticChanges",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "4096"
+        },
+        {
+            "fieldName": "levelOfDiscomfort",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "feesDiscount",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "feesDiscountGivenBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discountType",
+            "fieldType": "DiscountType",
+            "fieldValues": "NoDiscount,OnlyVisitFees,FixedFeesPerMonth,PercentDiscount,MaximumFees"
+        },
+        {
+            "fieldName": "discount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "allowEmail",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "allowSMS",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "allowWhatsApp",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "allowPromotions",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "iAgree",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "healingLevel",
+            "fieldType": "HealingLevel",
+            "fieldValues": "Simple,Complex,Special"
+        },
+        {
+            "fieldName": "allowLogin",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "voided",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "UUID"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210724124254",
+    "entityTableName": "icpatient",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

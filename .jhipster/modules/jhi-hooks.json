@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Mysql Uuid Converter generator",
+    "npmPackageName": "generator-jhipster-mysql-uuid-converter",
+    "description": "mysql Long to UUID converter",
+    "hookFor": "entity",
+    "hookType": "post",
+    "generatorCallback": "jhipster-mysql-uuid-converter:entity"
+  },
+  {
+    "name": "Entity Audit generator",
+    "npmPackageName": "generator-jhipster-entity-audit",
+    "description": "Add support for entity audit and audit log page",
+    "hookFor": "app",
+    "hookType": "post",
+    "generatorCallback": "jhipster-entity-audit:app"
+  },
+  {
+    "name": "Entity Audit generator",
+    "npmPackageName": "generator-jhipster-entity-audit",
+    "description": "Add support for entity audit and audit log page",
+    "hookFor": "entity",
+    "hookType": "post",
+    "generatorCallback": "jhipster-entity-audit:entity"
+  }
+]

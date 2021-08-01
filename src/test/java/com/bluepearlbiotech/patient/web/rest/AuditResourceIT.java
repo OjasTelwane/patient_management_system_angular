@@ -19,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
+import java.util.UUID;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.hasItem;
@@ -123,11 +124,11 @@ public class AuditResourceIT {
     public void testPersistentAuditEventEquals() throws Exception {
         TestUtil.equalsVerifier(PersistentAuditEvent.class);
         PersistentAuditEvent auditEvent1 = new PersistentAuditEvent();
-        auditEvent1.setId(1L);
+        auditEvent1.setId("00000000-0000-0000-0000-000000000001");
         PersistentAuditEvent auditEvent2 = new PersistentAuditEvent();
         auditEvent2.setId(auditEvent1.getId());
         assertThat(auditEvent1).isEqualTo(auditEvent2);
-        auditEvent2.setId(2L);
+        auditEvent2.setId("00000000-0000-0000-0000-000000000002");
         assertThat(auditEvent1).isNotEqualTo(auditEvent2);
         auditEvent1.setId(null);
         assertThat(auditEvent1).isNotEqualTo(auditEvent2);

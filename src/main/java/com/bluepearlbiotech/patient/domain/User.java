@@ -15,6 +15,8 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.Instant;
+import org.hibernate.annotations.Type;
+import java.util.UUID;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
@@ -30,9 +32,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
-    @SequenceGenerator(name = "sequenceGenerator")
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID id;
 
     @NotNull
     @Pattern(regexp = Constants.LOGIN_REGEX)
@@ -95,11 +96,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private Set<Authority> authorities = new HashSet<>();
 
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

@@ -1,0 +1,63 @@
+{
+    "name": "Location",
+    "fields": [
+        {
+            "fieldName": "country",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "countryCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "region",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "conState",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stateCode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "14"
+        },
+        {
+            "fieldName": "district",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "area",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pincode",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "14"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210731085418",
+    "javadoc": "Location Information.\\n@company Blue Pearl Biotech Software.\\n@author Santosh Telwane.\\n@Copyright 2020 Blue Pearl Biotech Software.",
+    "entityTableName": "iclocation",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "enableEntityAudit": true
+}

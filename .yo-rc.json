@@ -36,5 +36,13 @@
     "otherModules": [],
     "enableTranslation": false,
     "blueprints": []
+  },
+  "generator-jhipster-mysql-uuid-converter": {
+    "lastLiquibaseTimestamp": 1627120954000
+  },
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "custom",
+    "auditPage": false,
+    "lastLiquibaseTimestamp": 1627121761000
   }
 }
